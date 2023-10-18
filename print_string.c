@@ -3,23 +3,23 @@
 /**
  * print_string - print inpuit as string
  * @args: argument to print
- * Return:void
+ * Return:number of chars printed
  */
 int print_string(va_list args)
 {
 	char *ch;
-	int len=0;
+	int length=0;
 
 	ch = va_arg(args, char *);
 	if (ch == NULL)
-		ch = "(null)";
-
+	{
+	    ch = "(null)";
+	}
 	while (*ch != '\0')
 	{
 		_putchar((unsigned char) *ch);
 		ch++;
-		len++;
+		length++;
 	}
-	return (len);
-
+	return (length);
 }

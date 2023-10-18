@@ -1,17 +1,15 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-#include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdarg.h>
 #include <limits.h>
+#include <stdio.h>
+
 
 /**
- * struct format - match the specifiers for printf
- * @spc: char pointer of the specifier
- * @fun: pointer to the function that convert specifier
- *
+ * struct format - Struct for format
+ * @spc: Struct format
+ * @fun: The function associated
  */
 
 typedef struct format
@@ -21,11 +19,11 @@ typedef struct format
 } format_t;
 
 
-int _strlen(char *s);
-int _putchar(char c);
-int printf_char(va_list args);
-int printf_string(va_list args);
-int printf_mod(va_list args);
-int printf_int(va_list args);
+
 int _printf(const char *format, ...);
+int _putchar(char c);
+int print_char(va_list args);
+int print_mod(va_list args);
+int print_string(va_list args);
+
 #endif

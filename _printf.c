@@ -13,11 +13,9 @@ int _printf(const char * const format, ...)
     va_list args;
 
 	format_t fun_arr[] = {
-		{"%c", printf_charr}
-        ,{"%s", printf_string}
-		,{"%%", printf_mod}
-		, {"%i", printf_int}
-		,{"%d", printf_int},
+		 {"%c", print_char}
+        ,{"%s", print_string}
+		,{"%%", print_mod}
 	};
 
 	size_t fun_arr_size = sizeof(fun_arr) / sizeof(fun_arr[0]);
@@ -47,3 +45,4 @@ int _printf(const char * const format, ...)
 	va_end(args);
 	return (length);
 }
+

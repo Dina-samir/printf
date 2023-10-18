@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_mod - print %
+ * print_mod : print %
  * @args: argument to print
  * Return:1
  */
