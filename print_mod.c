@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * print_mod : print %
+ * print_mod : print % sign
  * @args: argument to print
- * Return:1
+ * Return:number of printed argument (in this case 1)
  */
 int print_mod(va_list args)
 {
 	(void)args;
-	_putchar('%');
+// 	_putchar('%');
+	_putchar(37);
 	return (1);
 }

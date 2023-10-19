@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_char - print input as char
+ * print_char - print input char
  * @args:argument to print
- * Return:len of char
+ * Return:number of printed argument (in this case 1)
  */
 int print_char(va_list args)
 {

@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_string - print inpuit as string
+ * print_string - print argument as string
  * @args: argument to print
- * Return:number of chars printed
+ * Return: number of printed argument 
  */
 int print_string(va_list args)
 {
@@ -18,8 +18,7 @@ int print_string(va_list args)
 	while (*ch != '\0')
 	{
 		_putchar((unsigned char) *ch);
-		ch++;
-		length++;
+		ch++, length++;
 	}
 	return (length);
 }

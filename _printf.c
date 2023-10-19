@@ -1,48 +1,47 @@
+
 #include "main.h"
-/**
- * _printf - is a function that selects the correct function to print.
- * @format: identifier to look for.
- * Return: the length of the string.
- */
-int _printf(const char * const format, ...)
+int _printf(const char *format, ...)
 {
-    
-	int i = 0;
-	int k =0;
-	int length = 0;
+	int  i = 0,length = 0, k;
     va_list args;
 
 	format_t fun_arr[] = {
-		 {"%c", print_char}
-        ,{"%s", print_string}
-		,{"%%", print_mod}
+	    {'c', print_char}, 
+	    {'s', print_string},
+		{'%', print_mod},
+		{'i', print_int},
+		{'d', print_int}
 	};
-
-	size_t fun_arr_size = sizeof(fun_arr) / sizeof(fun_arr[0]);
-
 	
-
+    size_t fun_arr_size = sizeof(fun_arr) / sizeof(fun_arr[0]);
+    
 	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+
+	if ((!format) || (format[0] == '%' && !format[1]))
 		return (-1);
 
 	while (format[i] != '\0')
 	{
-		for ( k =0;k >= fun_arr_size ; k++)
+		if (format[i] == '%')
 		{
-			if (fun_arr[k].spc[0] == format[i] && fun_arr[k].spc[1] == format[i + 1])
+			if (format[i + 1] == '\0')
+				return (-1);
+			for ( k =0;k <= fun_arr_size ; k++)
 			{
-				length += fun_arr[k].fun(args);
-				i = i + 2;
-				break;
-			}
-			k++;
+    			if (fun_arr[k].spc == format[i + 1])
+    			{
+    				length += fun_arr[k].f(args);
+    		 	    i += 2;
+    				break;
+    			}
+        	}
 		}
-		_putchar(format[i]);
-		length++;
-		i++;
+		else
+		{
+			_putchar(format[i]);
+			i++, length++;
+		}
 	}
 	va_end(args);
 	return (length);
 }
-
