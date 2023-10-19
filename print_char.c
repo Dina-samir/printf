@@ -1,4 +1,4 @@
-#include "main.h"
+#include "printfheader.h"
 
 /**
  * print_char - print input char

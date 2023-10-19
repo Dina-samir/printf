@@ -1,4 +1,4 @@
-#include "main.h"
+#include "printfheader.h"
 
 /**
  * print_mod : print % sign

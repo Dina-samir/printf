@@ -1,5 +1,5 @@
 
-#include "main.h"
+#include "printfheader.h"
 int _printf(const char *format, ...)
 {
 	int  i = 0,length = 0, k;

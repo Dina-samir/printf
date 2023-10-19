@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINTFHEADER_H
+#define PRINTFHEADER_H
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
