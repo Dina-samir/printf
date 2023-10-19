@@ -1,5 +1,4 @@
-
-#include "printfheader.h"
+#include "main.h"
 int _printf(const char *format, ...)
 {
 	int  i = 0,length = 0, k;
@@ -13,7 +12,7 @@ int _printf(const char *format, ...)
 		{'d', print_int}
 	};
 	
-    size_t fun_arr_size = sizeof(fun_arr) / sizeof(fun_arr[0]);
+    int fun_arr_size = sizeof(fun_arr) / sizeof(fun_arr[0]);
     
 	va_start(args, format);
 

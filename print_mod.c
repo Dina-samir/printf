@@ -1,4 +1,4 @@
-#include "printfheader.h"
+#include "main.h"
 
 /**
  * print_mod : print % sign
@@ -8,7 +8,6 @@
 int print_mod(va_list args)
 {
 	(void)args;
-// 	_putchar('%');
 	_putchar(37);
 	return (1);
 }
