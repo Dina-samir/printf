@@ -2,7 +2,7 @@
 /**
  * printf_int - prints integer
  * @args: argument
- * Return: number of printed argument 
+ * Return: number of printed argument
  */
 int print_int(va_list args)
 {
@@ -10,10 +10,8 @@ int print_int(va_list args)
 	int number, digit ;
 	int  i = 1, exp = 1;
     int lst = n % 10;
-    
 	n = n / 10;
 	number = n;
-
 	if (lst < 0)
 	{
 	    i++;
@@ -21,7 +19,6 @@ int print_int(va_list args)
 		n = -n;
 		lst = -lst;
 		_putchar('-');
-		
 	}
 	if (number > 0)
 	{
@@ -38,10 +35,8 @@ int print_int(va_list args)
 			number = number - (digit * exp);
 			exp = exp / 10;
 			_putchar(digit + '0');
-		
 		}
 	}
 	_putchar(lst + '0');
-
 	return (i);
 }

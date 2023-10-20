@@ -20,13 +20,13 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0')
 				return (-1);
 			matcher = 0;
-			for (k =0; k <= fun_arr_size; k++)
+			for (k = 0; k <= fun_arr_size; k++)
 			{
 				if (fun_arr[k].spc == format[i + 1])
 				{
 					length += fun_arr[k].f(args);
 					i += 2;
-					matcher=1;
+					matcher = 1;
 					break;
 				}
         	}
