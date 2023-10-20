@@ -1,31 +1,32 @@
-include "main.h"
+#include "main.h"
+
 /**
  * print_binary - prints a binary number.
- * @args: argument to be printed.
- * Return: number of printed.
+ * @args: arguments to be print
+ * Return:number of printed
  */
 int print_binary(va_list args)
 {
-	int m = 0, int c = 0, a = 1;
-	int i,  b;
+	int f = 0, count = 0, i, a = 1, b;
+	unsigned int num = va_arg(args, unsigned int);
 	unsigned int p;
-    unsigned int n = va_arg(args, unsigned int);
+
 	for (i = 0; i < 32; i++)
 	{
-		p = ((a << (31 - i)) & n);
+		p = ((a << (31 - i)) & num);
 		if (p >> (31 - i))
-			m = 1;
-		if (m != 0)
+			f = 1;
+		if (f)
 		{
 			b = p >> (31 - i);
 			_putchar(b + 48);
-			c++;
+			count++;
 		}
 	}
-	if (c == 0)
+	if (count == 0)
 	{
 		_putchar('0');
-		c++;
+		count++;
 	}
-	return (c);
+	return (count);
 }
