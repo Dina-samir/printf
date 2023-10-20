@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int  i = 0,length = 0,matcher , k;
+	int i = 0, length = 0, matcher, k;
     va_list args;
 	format_t fun_arr[] = {{'c', print_char}, {'s', print_string}, {'%', print_mod}, {'i', print_int}, {'d', print_int}};
     int fun_arr_size = sizeof(fun_arr) / sizeof(fun_arr[0]);
@@ -19,18 +19,18 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 				return (-1);
-			matcher=0;
-			for ( k =0;k <= fun_arr_size ; k++)
+			matcher = 0;
+			for (k =0; k <= fun_arr_size; k++)
 			{
-    			if (fun_arr[k].spc == format[i + 1])
-    			{
-    				length += fun_arr[k].f(args);
-    		 	    i += 2;
+				if (fun_arr[k].spc == format[i + 1])
+				{
+					length += fun_arr[k].f(args);
+					i += 2;
 					matcher=1;
-    				break;
-    			}
+					break;
+				}
         	}
-			if (matcher==0)
+			if (matcher == 0)
 			{
 				_putchar('%');
 				_putchar(format[i + 1]);
